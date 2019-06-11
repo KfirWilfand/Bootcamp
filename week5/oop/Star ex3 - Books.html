@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/jquery-3.4.1.min.js"></script>
+
+</head>
+
+<body>
+    <script>
+        class Book {
+            constructor(title, author, isRead) {
+                this.title = title;
+                this.author = author;
+                this.isRead = isRead;
+            }
+        }
+
+        function printBook(book) {
+            console.log(`The ${book.title} by ${book.author}`);
+        }
+
+        function printUnReadBooks(books) {
+            let readBooks = [];
+            books.forEach(book => {
+                if (!book.isRead) {
+                    readBooks.push(book.title);
+                }
+            });
+            return readBooks;
+        }
+
+        function test_equal(actual, expected) {
+            if (Array.isArray(expected)) {
+                for (var i = 0; i < expected.length; i++) {
+                    test_equal(actual[i], expected[i], "item in index " + i);
+                }
+            } else if (typeof expected === "object") {
+                for (prop in expected) {
+                    test_equal(actual[prop], expected[prop]);
+                }
+            } else {
+                if (actual !== expected) {
+                    console.log(`Error testing . expected: ${expected}, got ${actual}`)
+                }
+            }
+        }
+
+        function test_readBook(actual, expected) {
+            if (Array.isArray(expected)) {
+                for (var i = 0; i < expected.length; i++) {
+                    test_equal(actual[i], expected[i], "item in index " + i);
+                }
+            } else if (typeof expected === "object") {
+                for (prop in expected) {
+                    test_equal(actual[prop], expected[prop]);
+                }
+            } else {
+                if (actual !== expected) {
+                    console.log(`Error testing . expected: ${expected}, got ${actual}`)
+                }
+            }
+        }
+
+
+
+        var book1 = new Book("The pizza book", "Yakir", true);
+        var book2 = new Book("Where is my mine?", "Oasis", false);
+        var book3 = new Book("The Scent of Murder", "Kylie Logan", false);
+        var books = [book1, book2, book3];
+
+        test_equal(books, [book1, book2, book3]);
+        test_readBook(printUnReadBooks(books), ["Where is my mine?", "The Scent of Murder"]);
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,210 @@
+.text-only-block {
+  display: inline-block;
+  margin-top: 40px;
+}
+
+.text-only-item {
+  text-align: center;
+  margin: 12px;
+}
+
+.text-only-item.subtitle {
+  text-align: center;
+  margin: auto;
+}
+
+.text-only-item.links a {
+  padding-right: 21px;
+  color: #0070c9;
+}
+
+.text-only-item.title-image {
+  background-repeat: no-repeat;
+  display: inline-block;
+  background-size: inherit;
+  height: 10vh;
+  width: 10vh;
+}
+
+.tv-4k .text-only-block .subtitle {
+  color: white;
+}
+.watch .text-only-block .subtitle,
+.ipad-pro .text-only-block {
+  color: black;
+}
+
+.iPhone-xr-offer .text-only-block .subtitle {
+  width: 390px;
+}
+.iPhone-xr-hero .text-only-block .subtitle,
+.iPhone-xs-hero .text-only-block .subtitle {
+  width: 470px;
+}
+
+@media screen and (min-width: 900px) {
+  .text-only-item.title-image {
+    background-size: 209px 33px;
+    height: 33px;
+    width: 209px;
+  }
+  .apple-tv .text-only-item.title-image {
+    background-image: url("../img/logo/apple_tv/large.png");
+    background-size: 50px 50px;
+    height: 50px;
+    width: 50px;
+  }
+  .apple-tv-plus .text-only-item.subtitle {
+    width: 250px;
+  }
+
+  .apple-tv-plus .text-only-item.title-image {
+    background-image: url("../img/logo/tv_plus/large.png");
+    background-size: 90px 33px;
+    height: 33px;
+    width: 90px;
+  }
+  .iPhone-xr-hero .text-only-item.title-image {
+    background-image: url("../img/logo/iphone_xr/large.png");
+  }
+  .iPhone-xs-hero .text-only-item.title-image {
+    background-image: url("../img/logo/iphone_xs/large.png");
+  }
+  .tv-4k .text-only-item.title-image {
+    background-image: url("../img/logo/apple_tv_4k/large.png");
+    background-size: 180px 45px;
+    height: 45px;
+    width: 180px;
+  }
+  .watch .text-only-item.title-image {
+    background-image: url("../img/logo/watch/large.jpg");
+    background-size: 140px 45px;
+    height: 45px;
+    width: 140px;
+  }
+  .news-plus .text-only-item.title-image {
+    background-image: url("../img/logo/apple_news/medium.png");
+    background-size: 140px 28px;
+    height: 28px;
+    width: 140px;
+  }
+  .music .text-only-item.title-image {
+    background-image: url("../img/logo/music/large.png");
+    background-size: 120px 28px;
+    height: 28px;
+    width: 120px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .text-only-item.title-image {
+    background-size: 179px 28px;
+    height: 28px;
+    width: 179px;
+  }
+  .apple-tv .text-only-item.title-image {
+    background-image: url("../img/logo/apple_tv/medium.png");
+    background-size: 50px 50px;
+    height: 50px;
+    width: 50px;
+  }
+
+  .apple-tv-plus .text-only-item.title-image {
+    background-image: url("../img/logo/tv_plus/large.png");
+    background-size: 90px 33px;
+    height: 33px;
+    width: 90px;
+  }
+  .iPhone-xr-offer .text-only-block .subtitle {
+    width: 200px;
+  }
+  .iPhone-xr-hero .text-only-block .subtitle,
+  .iPhone-xs-hero .text-only-block .subtitle {
+    width: inherit;
+  }
+  .iPhone-xr-hero .text-only-item.title-image {
+    background-image: url("../img/logo/iphone_xr/medium.png");
+  }
+  .iPhone-xs-hero .text-only-item.title-image {
+    background-image: url("../img/logo/iphone_xs/medium.png");
+  }
+  .tv-4k .text-only-item.title-image {
+    background-image: url("../img/logo/apple_tv_4k/medium.png");
+    background-size: 180px 45px;
+    height: 45px;
+    width: 180px;
+  }
+  .watch .text-only-item.title-image {
+    background-image: url("../img/logo/watch/large.jpg");
+    background-size: 140px 45px;
+    height: 45px;
+    width: 140px;
+  }
+  .news-plus .text-only-item.title-image {
+    background-image: url("../img/logo/apple_news/medium.png");
+    background-size: 140px 28px;
+    height: 28px;
+    width: 140px;
+  }
+  .music .text-only-item.title-image {
+    background-image: url("../img/logo/music/large.png");
+    background-size: 120px 28px;
+    height: 28px;
+    width: 120px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .text-only-block {
+    margin-top: 10px;
+  }
+
+  .text-only-item.title-image {
+    background-size: 145px 23px;
+    height: 23px;
+    width: 145px;
+  }
+  .apple-tv .text-only-item.title-image {
+    background-image: url("../img/logo/apple_tv/small.png");
+    background-size: 50px 50px;
+    height: 50px;
+    width: 50px;
+  }
+
+  .apple-tv-plus .text-only-item.title-image {
+    background-image: url("../img/logo/tv_plus/small.png");
+    background-size: 90px 33px;
+    height: 33px;
+    width: 90px;
+  }
+  .iPhone-xr-hero .text-only-item.title-image {
+    background-image: url("../img/logo/iphone_xr/small.png");
+  }
+  .iPhone-xs-hero .text-only-item.title-image {
+    background-image: url("../img/logo/iphone_xs/small.png");
+  }
+  .tv-4k .text-only-item.title-image {
+    background-image: url("../img/logo/apple_tv_4k/small.png");
+    background-size: 130px 35px;
+    height: 35px;
+    width: 130px;
+  }
+  .watch .text-only-item.title-image {
+    background-image: url("../img/logo/watch/large.jpg");
+    background-size: 140px 45px;
+    height: 45px;
+    width: 140px;
+  }
+  .news-plus .text-only-item.title-image {
+    background-image: url("../img/logo/apple_news/medium.png");
+    background-size: 140px 28px;
+    height: 28px;
+    width: 140px;
+  }
+  .music .text-only-item.title-image {
+    background-image: url("../img/logo/music/large.png");
+    background-size: 120px 28px;
+    height: 28px;
+    width: 120px;
+  }
+}

@@ -1,0 +1,15 @@
+#outer {
+    position: relative;
+    width: 100px;
+    height: 400px;
+    background: darkcyan;
+    margin: 50px;
+}
+
+#inner {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: lightgreen;
+    bottom: 10px;
+}

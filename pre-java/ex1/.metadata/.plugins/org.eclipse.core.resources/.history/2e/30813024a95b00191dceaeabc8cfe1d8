@@ -1,0 +1,43 @@
+package quiz;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class TestYourself {
+
+	public static final int TOTAL_SCORE_TO_BE_A_ANGEL = 20;
+
+	class Question {
+		public String question;
+		public Answer[] answers = new Answer[4];
+	}
+
+	class Answer {
+		public String answer;
+		public int score;
+		
+		public Answer(String answer, int score) {
+			this.answer = answer;
+			this.score = score;
+		}
+		
+	}
+	
+	public static void main(String arg[]) {
+		List<Question> questions = new ArrayList<Question>();
+		List<Answer> answers = new ArrayList<Answer>();
+		Question question = new Question();
+		
+		question.question = "How many white gowns do you hava in your closet?";
+	  
+		question.answers[0] = new Answer("df",3);
+		question.answers[1] = new Answer("",3);
+		question.answers[2] = new Answer("",3);
+		question.answers[3] = new Answer("",3);
+
+
+		System.out.println("*****************************************************\n"
+				+ "*       Hello Welcome to the 'Are you an angel?' quiz\n"
+				+ "*****************************************************\n");
+	}
+}

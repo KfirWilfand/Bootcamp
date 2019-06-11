@@ -1,0 +1,123 @@
+.stripe.feature .feature-item {
+  display: inline-block;
+  width: 49%;
+  height: 460px;
+  background-color: #fafafa;
+  position: relative;
+  color: white;
+}
+
+.stripe.feature .feature-item .text-only-item.links a {
+  padding-right: 21px;
+  color: white;
+  font-size: 15px;
+}
+
+.stripe.feature .feature-item.ipad-pro .text-only-item.links a,
+.stripe.feature .feature-item.watch .text-only-item.links a {
+  padding-right: 21px;
+  color: #0070c9;
+  font-size: 15px;
+}
+
+.stripe.feature .text-only-block {
+  position: absolute;
+  right: 25%;
+  left: 25%;
+  min-width: 250px;
+}
+
+.stripe.feature {
+  background-color: white;
+}
+
+.stripe.feature .feature-item {
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+
+@media screen and (min-width: 900px) {
+  .stripe.feature .feature-item.apple-tv {
+    background-image: url("../img/promo/apple_tv/large.jpg");
+    background-size: 1000px;
+  }
+  .stripe.feature .feature-item.apple-tv-plus {
+    background-image: url("../img/promo/tv_plus/large.jpg");
+    background-size: 1000px;
+  }
+  .stripe.feature .feature-item.watch {
+    background-image: url("../img/promo/watch/large.jpg");
+    background-size: 1000px;
+  }
+  .stripe.feature .feature-item.ipad-pro {
+    background-image: url("../img/promo/ipad_pro/large.jpg");
+    background-size: 350px;
+  }
+  .stripe.feature .feature-item.news-plus {
+    background-image: url("../img/promo/apple_news/large.jpg");
+    background-size: 700px;
+  }
+  .stripe.feature .feature-item.music {
+    background-image: url("../img/promo/apple_music/large.jpg");
+    background-size: 1000px;
+    background-position: center;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .stripe.feature .feature-item.apple-tv {
+    background-image: url("../img/promo/apple_tv/medium.jpg");
+    background-size: 500px;
+  }
+  .stripe.feature .feature-item.apple-tv-plus {
+    background-image: url("../img/promo/tv_plus/medium.jpg");
+    background-size: 500px;
+  }
+  .stripe.feature .feature-item.watch {
+    background-image: url("../img/promo/watch/large.jpg");
+    background-size: 1000px;
+  }
+  .stripe.feature .feature-item.ipad-pro {
+    background-image: url("../img/promo/ipad_pro/large.jpg");
+    background-size: 300px;
+  }
+  .stripe.feature .feature-item.news-plus {
+    background-image: url("../img/promo/apple_news/large.jpg");
+    background-size: 650px;
+  }
+  .stripe.feature .feature-item.music {
+    background-image: url("../img/promo/apple_music/medium.jpg");
+    background-size: 500px;
+    background-position: center;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .stripe.feature .feature-item {
+    display: block;
+    position: static;
+    width: 100%;
+    margin-bottom: 12px;
+  }
+  .stripe.feature .feature-item.apple-tv {
+    background-image: url("../img/promo/apple_tv/small.jpg");
+    background-size: 700px;
+  }
+  .stripe.feature .feature-item.apple-tv-plus {
+    background-image: url("../img/promo/tv_plus/small.jpg");
+    background-size: 700px;
+  }
+  .stripe.feature .feature-item.ipad-pro {
+    background-image: url("../img/promo/ipad_pro/small.jpg");
+    background-size: 250px;
+  }
+  .stripe.feature .feature-item.news-plus {
+    background-image: url("../img/promo/apple_news/large.jpg");
+    background-size: 700px;
+  }
+  .stripe.feature .feature-item.music {
+    background-image: url("../img/promo/apple_music/small.jpg");
+    background-size: 700px;
+    background-position: center;
+  }
+}

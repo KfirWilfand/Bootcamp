@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Car {
+            constructor(color, brand) {
+                this.color = color;
+                this.brand = brand;
+            }
+        }
+
+        let carTools = {
+            getCarColor: function (car) {
+                return car.color;
+            },
+            getCarBrand: function (car) {
+                return car.brand;
+            }, isEqual: function (car1, car2) {
+                if (this.getCarBrand(car1) === this.getCarBrand(car2) && this.getCarColor(car1) === this.getCarColor(car2)) {
+                    return true;
+                }
+                return false;
+            }
+        }
+
+        let car1 = new Car("red", "skoda");
+        let car2 = new Car("red", "skoda");
+        console.log(carTools.isEqual(car1, car2));
+
+        let car3 = new Car("blue", "skoda");
+        let car4 = new Car("blue", "fiat");
+        console.log(carTools.isEqual(car3, car4));
+    </script>
+</body>
+
+</html>

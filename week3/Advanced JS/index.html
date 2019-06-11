@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function onSubmit() {
+            var rbColor = document.getElementsByTagName("input");
+            var width = document.getElementById("width").value;
+            var height = document.getElementById("height").value;
+
+            var color;
+            for (let radio of rbColor) {
+                if (radio.checked) {
+                    color = radio.id;
+                }
+
+            }
+
+
+            var style = `background-color: ${color}; height: ${height}px;width: ${width}px;`;
+            document.getElementById("rec").setAttribute("style", style);
+
+        }
+    </script>
+    <style>
+        body {
+            display: inline-block;
+        }
+
+        #rec {
+            background-color: rgb(21, 255, 0);
+            height: 100px;
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <input id="width" type="text" placeholder="width">
+    <input id="height" type="text" placeholder="height">
+    <input id="red" type="radio" name="w">red
+    <input id="green" type="radio" name="w">green
+    <input id="yellow" type="radio" name="w">yellow
+    <button onclick="onSubmit();">onSubmit</button>
+    <div class>
+        <div id="rec"></div>
+    </div>
+</body>
+
+</html>

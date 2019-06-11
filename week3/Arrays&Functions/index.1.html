@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+
+
+
+    <script>
+        var max = (arr) => {
+            var max = 0
+
+            arr.forEach(function (element) {
+                if (element > max) max = element;
+            });
+
+            return max;
+        }
+
+        var sumOfEvens = (arr) => {
+            var sum = 0
+
+            arr.forEach(function (element) {
+                if (element % 2 === 0) sum += element;
+            });
+
+            return sum;
+        }
+
+
+        var average = (arr) => {
+            var sum = 0
+
+            arr.forEach(function (element) {
+                sum += element;
+            });
+
+            return sum / arr.length;
+        }
+
+        function test_equal(actual, expected, msg) {
+            if (actual !== expected) {
+                console.log(`Error testing ${msg || ''}. expected: ${expected}, got ${actual}`)
+            }
+        }
+        test_equal(max([3, 5, 77, 2, 62]), 77);
+        test_equal(sumOfEvens([3, 4, 5, 77, 2, 62]), 68);
+        test_equal(average([3, 5, 4, 5, 5]), 4.4);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

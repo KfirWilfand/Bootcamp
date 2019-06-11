@@ -1,0 +1,25 @@
+package quiz;
+
+public class TestYourself {
+
+	class Question {
+		String question;
+		Answer[] answers;
+	}
+
+	class Answer {
+		String answer;
+		int score;
+		int location;
+
+		Answer(String answer, int score, int location) {
+			this.answer = answer;
+			this.score = score;
+			this.location = location;
+		}
+	}
+
+	public static void main(String arg[]) {
+
+	}
+}

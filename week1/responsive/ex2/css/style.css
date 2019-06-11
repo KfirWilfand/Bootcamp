@@ -1,0 +1,24 @@
+.content {
+  position: relative;
+}
+
+.text {
+  background-color: grey;
+  color: white;
+  border: 2px solid blue;
+  margin: 4px;
+  width: 300px;
+}
+
+
+@media screen and (min-width:1280px) {
+  .text {
+    display: inline-block;
+  }
+  body{
+    background-color: blueviolet;
+  }
+}
+
+
+

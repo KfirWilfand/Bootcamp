@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/jquery-3.4.1.min.js"></script>
+
+</head>
+
+<body>
+    <script>
+        class Shape {
+            constructor(type, color) {
+                this.type = type;
+                this.color = color;
+            }
+
+        }
+
+        let circle = new Shape("circle", "blue");
+        let square = new Shape("square", "blue");
+
+        //3
+        circle.radius = 3;
+        //4
+        square.edgeLength = 5;
+        //5 
+        square.calcArea = (edgeLength) => {
+            return Math.pow(edgeLength, 2);
+        }
+        //6
+        circle.calcArea = (radius) => {
+            return Math.PI * Math.pow(radius, 2);
+        }
+        //7
+        function calcShapeArea(shape) {
+            let calc;
+            if (shape.type === "circle")
+                calc = shape.calcArea(shape.radius)
+            else
+                calc = shape.calcArea(shape.edgeLength)
+
+            return calc;
+        }
+        //8
+        console.log(calcShapeArea(circle));
+        console.log(calcShapeArea(square));
+        //9
+        square.calcArea2 = function () {
+            return Math.pow(this.edgeLength, 2);
+        }
+        //10
+        circle.calcArea2 = function () {
+            return Math.PI * Math.pow(this.radius, 2);
+        }
+        //11
+        function calcShapeArea2(shape) {
+            let calc;
+            if (shape.type === "circle")
+                calc = shape.calcArea(shape.radius)
+            else
+                calc = shape.calcArea(shape.edgeLength)
+
+            return calc;
+        }
+
+        function test_equal(actual, expected, msg) {
+            if (actual !== expected) {
+                console.log(`Error testing ${msg || ''}. expected: ${expected}, got ${actual}`)
+            }
+        }
+        test_equal(square.type, "square");
+        test_equal(circle.type, "circle");
+        test_equal(circle.radius, 3);
+        test_equal(square.edgeLength, 5);
+        test_equal(square.calcArea(square.edgeLength), 25);
+        test_equal(circle.calcArea(circle.radius), Math.PI * 9);
+        test_equal(calcShapeArea(square), 25);
+        test_equal(calcShapeArea(circle), Math.PI * 9);
+        test_equal(square.calcArea2(), 25);
+        test_equal(circle.calcArea2(), Math.PI * 9);
+        test_equal(calcShapeArea2(square), 25);
+        test_equal(calcShapeArea2(circle), Math.PI * 9);
+
+    </script>
+</body>
+
+</html>

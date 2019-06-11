@@ -1,0 +1,150 @@
+
+<title>
+    Hive Preview
+</title>
+<style>
+    body {
+        font-family: Segoe UI, Lucida Sans, Lucida Sans Unicode, Arial Unicode MS, Arial, sans-serif;
+        tab-size: 4;
+    }
+</style>
+<div class="highlight" ><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">java.io.BufferedReader</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">java.io.File</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">java.io.FileNotFoundException</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">java.io.FileReader</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">java.io.IOException</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">java.util.Random</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">java.util.Scanner</span><span style="color: #666666">;</span>
+
+<span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">Hangman</span> <span style="color: #666666">{</span>
+
+	<span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">static</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">main</span><span style="color: #666666">(</span>String<span style="color: #666666">[]</span> args<span style="color: #666666">)</span> <span style="color: #008000; font-weight: bold">throws</span> FileNotFoundException<span style="color: #666666">,</span> IOException <span style="color: #666666">{</span>
+		printSplash<span style="color: #666666">();</span>
+		String word<span style="color: #666666">;</span>
+		word <span style="color: #666666">=</span> getWordFromFile<span style="color: #666666">();</span>
+		start<span style="color: #666666">(</span>word<span style="color: #666666">);</span>
+	<span style="color: #666666">}</span>
+
+	<span style="color: #008000; font-weight: bold">private</span> <span style="color: #008000; font-weight: bold">static</span> String <span style="color: #0000FF">getWord</span><span style="color: #666666">()</span> <span style="color: #666666">{</span>
+		String<span style="color: #666666">[]</span> words <span style="color: #666666">=</span> <span style="color: #666666">{</span> <span style="color: #BA2121">&quot;book&quot;</span><span style="color: #666666">,</span> <span style="color: #BA2121">&quot;business&quot;</span><span style="color: #666666">,</span> <span style="color: #BA2121">&quot;company&quot;</span><span style="color: #666666">,</span> <span style="color: #BA2121">&quot;government&quot;</span><span style="color: #666666">,</span> <span style="color: #BA2121">&quot;home&quot;</span><span style="color: #666666">,</span> <span style="color: #BA2121">&quot;student&quot;</span><span style="color: #666666">,</span> <span style="color: #BA2121">&quot;water&quot;</span><span style="color: #666666">,</span> <span style="color: #BA2121">&quot;people&quot;</span><span style="color: #666666">,</span> <span style="color: #BA2121">&quot;money&quot;</span><span style="color: #666666">,</span>
+				<span style="color: #BA2121">&quot;group&quot;</span><span style="color: #666666">,</span> <span style="color: #BA2121">&quot;child&quot;</span><span style="color: #666666">,</span> <span style="color: #BA2121">&quot;newspaper&quot;</span><span style="color: #666666">,</span> <span style="color: #BA2121">&quot;comprehension&quot;</span><span style="color: #666666">,</span> <span style="color: #BA2121">&quot;conversation&quot;</span><span style="color: #666666">,</span> <span style="color: #BA2121">&quot;communicate&quot;</span><span style="color: #666666">,</span> <span style="color: #BA2121">&quot;vocabulary&quot;</span> <span style="color: #666666">};</span>
+
+		Random rand <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> Random<span style="color: #666666">();</span>
+		<span style="color: #B00040">int</span> index <span style="color: #666666">=</span> rand<span style="color: #666666">.</span><span style="color: #7D9029">nextInt</span><span style="color: #666666">(</span>words<span style="color: #666666">.</span><span style="color: #7D9029">length</span><span style="color: #666666">);</span>
+
+		<span style="color: #008000; font-weight: bold">return</span> words<span style="color: #666666">[</span>index<span style="color: #666666">];</span>
+	<span style="color: #666666">}</span>
+
+	<span style="color: #008000; font-weight: bold">private</span> <span style="color: #008000; font-weight: bold">static</span> String <span style="color: #0000FF">getWordFromFile</span><span style="color: #666666">()</span> <span style="color: #008000; font-weight: bold">throws</span> FileNotFoundException<span style="color: #666666">,</span> IOException <span style="color: #666666">{</span>
+		String fileName <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;words.txt&quot;</span><span style="color: #666666">;</span>
+		File file <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> File<span style="color: #666666">(</span>fileName<span style="color: #666666">);</span>
+		FileReader fr<span style="color: #666666">;</span>
+		fr <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> FileReader<span style="color: #666666">(</span>file<span style="color: #666666">);</span>
+		BufferedReader br <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> BufferedReader<span style="color: #666666">(</span>fr<span style="color: #666666">);</span>
+		String line <span style="color: #666666">=</span> br<span style="color: #666666">.</span><span style="color: #7D9029">readLine</span><span style="color: #666666">();</span>
+		String<span style="color: #666666">[]</span> words <span style="color: #666666">=</span> line<span style="color: #666666">.</span><span style="color: #7D9029">split</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;,&quot;</span><span style="color: #666666">);</span>
+
+		Random rand <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> Random<span style="color: #666666">();</span>
+		<span style="color: #B00040">int</span> index <span style="color: #666666">=</span> rand<span style="color: #666666">.</span><span style="color: #7D9029">nextInt</span><span style="color: #666666">(</span>words<span style="color: #666666">.</span><span style="color: #7D9029">length</span><span style="color: #666666">);</span>
+
+		<span style="color: #008000; font-weight: bold">return</span> words<span style="color: #666666">[</span>index<span style="color: #666666">];</span>
+	<span style="color: #666666">}</span>
+
+	<span style="color: #008000; font-weight: bold">private</span> <span style="color: #008000; font-weight: bold">static</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">printSplash</span><span style="color: #666666">()</span> <span style="color: #666666">{</span>
+		System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot; _                                             \r\n&quot;</span>
+				<span style="color: #666666">+</span> <span style="color: #BA2121">&quot;| |                                            \r\n&quot;</span>
+				<span style="color: #666666">+</span> <span style="color: #BA2121">&quot;| |__   __ _ _ __   __ _ _ __ ___   __ _ _ __  \r\n&quot;</span>
+				<span style="color: #666666">+</span> <span style="color: #BA2121">&quot;| &#39;_ \\ / _` | &#39;_ \\ / _` | &#39;_ ` _ \\ / _` | &#39;_ \\ \r\n&quot;</span>
+				<span style="color: #666666">+</span> <span style="color: #BA2121">&quot;| | | | (_| | | | | (_| | | | | | | (_| | | | |\r\n&quot;</span>
+				<span style="color: #666666">+</span> <span style="color: #BA2121">&quot;|_| |_|\\__,_|_| |_|\\__, |_| |_| |_|\\__,_|_| |_|\r\n&quot;</span>
+				<span style="color: #666666">+</span> <span style="color: #BA2121">&quot;                    __/ |                      \r\n&quot;</span> <span style="color: #666666">+</span> <span style="color: #BA2121">&quot;                   |___/      &quot;</span><span style="color: #666666">);</span>
+		System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot; ___________.._______\r\n&quot;</span> <span style="color: #666666">+</span> <span style="color: #BA2121">&quot;| .__________))______|\r\n&quot;</span> <span style="color: #666666">+</span> <span style="color: #BA2121">&quot;| | / /      ||\r\n&quot;</span>
+				<span style="color: #666666">+</span> <span style="color: #BA2121">&quot;| |/ /       ||\r\n&quot;</span> <span style="color: #666666">+</span> <span style="color: #BA2121">&quot;| | /        ||.-&#39;&#39;.\r\n&quot;</span> <span style="color: #666666">+</span> <span style="color: #BA2121">&quot;| |/         |/  _  \\\r\n&quot;</span>
+				<span style="color: #666666">+</span> <span style="color: #BA2121">&quot;| |          ||  `/,|\r\n&quot;</span> <span style="color: #666666">+</span> <span style="color: #BA2121">&quot;| |          (\\\\`_.&#39;\r\n&quot;</span> <span style="color: #666666">+</span> <span style="color: #BA2121">&quot;| |         .-`--&#39;.\r\n&quot;</span>
+				<span style="color: #666666">+</span> <span style="color: #BA2121">&quot;| |        /Y . . Y\\\r\n&quot;</span> <span style="color: #666666">+</span> <span style="color: #BA2121">&quot;| |       // |   | \\\\\r\n&quot;</span> <span style="color: #666666">+</span> <span style="color: #BA2121">&quot;| |      //  | . |  \\\\\r\n&quot;</span>
+				<span style="color: #666666">+</span> <span style="color: #BA2121">&quot;| |     &#39;)   |   |   (`\r\n&quot;</span> <span style="color: #666666">+</span> <span style="color: #BA2121">&quot;| |          ||&#39;||\r\n&quot;</span> <span style="color: #666666">+</span> <span style="color: #BA2121">&quot;| |          || ||\r\n&quot;</span>
+				<span style="color: #666666">+</span> <span style="color: #BA2121">&quot;| |          || ||\r\n&quot;</span> <span style="color: #666666">+</span> <span style="color: #BA2121">&quot;| |          || ||\r\n&quot;</span> <span style="color: #666666">+</span> <span style="color: #BA2121">&quot;| |         / | | \\\r\n&quot;</span>
+				<span style="color: #666666">+</span> <span style="color: #BA2121">&quot;\&quot;\&quot;\&quot;\&quot;\&quot;\&quot;\&quot;\&quot;\&quot;\&quot;|_`-&#39; `-&#39; |\&quot;\&quot;\&quot;|\r\n&quot;</span> <span style="color: #666666">+</span> <span style="color: #BA2121">&quot;|\&quot;|\&quot;\&quot;\&quot;\&quot;\&quot;\&quot;\&quot;\\ \\       &#39;\&quot;|\&quot;|\r\n&quot;</span>
+				<span style="color: #666666">+</span> <span style="color: #BA2121">&quot;| |        \\ \\        | |\r\n&quot;</span> <span style="color: #666666">+</span> <span style="color: #BA2121">&quot;: :         \\ \\       : :  sk\r\n&quot;</span>
+				<span style="color: #666666">+</span> <span style="color: #BA2121">&quot;. .          `&#39;       . .\r\n&quot;</span> <span style="color: #666666">+</span> <span style="color: #BA2121">&quot;&quot;</span><span style="color: #666666">);</span>
+
+	<span style="color: #666666">}</span>
+
+	<span style="color: #008000; font-weight: bold">private</span> <span style="color: #008000; font-weight: bold">static</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">start</span><span style="color: #666666">(</span>String word<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+		<span style="color: #B00040">int</span> attempts <span style="color: #666666">=</span> <span style="color: #666666">10;</span>
+		String asteWord <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> String<span style="color: #666666">();</span>
+
+		<span style="color: #008000; font-weight: bold">for</span> <span style="color: #666666">(</span><span style="color: #B00040">int</span> i <span style="color: #666666">=</span> <span style="color: #666666">0;</span> i <span style="color: #666666">&lt;</span> word<span style="color: #666666">.</span><span style="color: #7D9029">length</span><span style="color: #666666">();</span> i<span style="color: #666666">++)</span> <span style="color: #666666">{</span>
+			asteWord <span style="color: #666666">+=</span> <span style="color: #BA2121">&quot;*&quot;</span><span style="color: #666666">;</span>
+		<span style="color: #666666">}</span>
+
+		<span style="color: #008000; font-weight: bold">while</span> <span style="color: #666666">(</span><span style="color: #008000; font-weight: bold">true</span><span style="color: #666666">)</span> <span style="color: #666666">{</span>
+			System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;You have &quot;</span> <span style="color: #666666">+</span> attempts <span style="color: #666666">+</span> <span style="color: #BA2121">&quot; guesses&quot;</span><span style="color: #666666">);</span>
+			System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;The word is:&quot;</span><span style="color: #666666">);</span>
+			System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span>asteWord<span style="color: #666666">);</span>
+
+			<span style="color: #B00040">boolean</span> isValidate<span style="color: #666666">;</span>
+			String guess <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">null</span><span style="color: #666666">;</span>
+			<span style="color: #008000; font-weight: bold">do</span> <span style="color: #666666">{</span>
+				System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;What is your guess?&quot;</span><span style="color: #666666">);</span>
+				Scanner in <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> Scanner<span style="color: #666666">(</span>System<span style="color: #666666">.</span><span style="color: #7D9029">in</span><span style="color: #666666">);</span>
+				guess <span style="color: #666666">=</span> in<span style="color: #666666">.</span><span style="color: #7D9029">nextLine</span><span style="color: #666666">();</span>
+				isValidate <span style="color: #666666">=</span> validateChar<span style="color: #666666">(</span>guess<span style="color: #666666">);</span>
+
+				<span style="color: #008000; font-weight: bold">if</span> <span style="color: #666666">(!</span>isValidate<span style="color: #666666">)</span>
+					System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Invaild guess... try again...&quot;</span><span style="color: #666666">);</span>
+
+			<span style="color: #666666">}</span> <span style="color: #008000; font-weight: bold">while</span> <span style="color: #666666">(!</span>isValidate<span style="color: #666666">);</span>
+
+			guess <span style="color: #666666">=</span> guess<span style="color: #666666">.</span><span style="color: #7D9029">toLowerCase</span><span style="color: #666666">();</span>
+
+			<span style="color: #008000; font-weight: bold">if</span> <span style="color: #666666">(</span>word<span style="color: #666666">.</span><span style="color: #7D9029">contains</span><span style="color: #666666">(</span>guess<span style="color: #666666">))</span> <span style="color: #666666">{</span>
+				<span style="color: #B00040">char</span> guessLatter <span style="color: #666666">=</span> guess<span style="color: #666666">.</span><span style="color: #7D9029">toLowerCase</span><span style="color: #666666">().</span><span style="color: #7D9029">charAt</span><span style="color: #666666">(0);</span>
+				asteWord <span style="color: #666666">=</span> replaceAll<span style="color: #666666">(</span>asteWord<span style="color: #666666">.</span><span style="color: #7D9029">toCharArray</span><span style="color: #666666">(),</span> word<span style="color: #666666">.</span><span style="color: #7D9029">toCharArray</span><span style="color: #666666">(),</span> guessLatter<span style="color: #666666">);</span>
+
+			<span style="color: #666666">}</span> <span style="color: #008000; font-weight: bold">else</span> <span style="color: #666666">{</span>
+				attempts<span style="color: #666666">--;</span>
+			<span style="color: #666666">}</span>
+
+			<span style="color: #008000; font-weight: bold">if</span> <span style="color: #666666">(</span>attempts <span style="color: #666666">&lt;=</span> <span style="color: #666666">0)</span> <span style="color: #666666">{</span>
+				System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;You loser! Bye Bye&quot;</span><span style="color: #666666">);</span>
+				<span style="color: #008000; font-weight: bold">break</span><span style="color: #666666">;</span>
+			<span style="color: #666666">}</span>
+
+			<span style="color: #008000; font-weight: bold">if</span> <span style="color: #666666">(!</span>asteWord<span style="color: #666666">.</span><span style="color: #7D9029">contains</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;*&quot;</span><span style="color: #666666">))</span> <span style="color: #666666">{</span>
+				System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Wow you are good!!&quot;</span><span style="color: #666666">);</span>
+				<span style="color: #008000; font-weight: bold">break</span><span style="color: #666666">;</span>
+			<span style="color: #666666">}</span>
+
+		<span style="color: #666666">}</span>
+	<span style="color: #666666">}</span>
+
+	<span style="color: #008000; font-weight: bold">private</span> <span style="color: #008000; font-weight: bold">static</span> String <span style="color: #0000FF">replaceAll</span><span style="color: #666666">(</span><span style="color: #B00040">char</span><span style="color: #666666">[]</span> asteWord<span style="color: #666666">,</span> <span style="color: #B00040">char</span><span style="color: #666666">[]</span> word<span style="color: #666666">,</span> <span style="color: #B00040">char</span> latter<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+
+		<span style="color: #008000; font-weight: bold">for</span> <span style="color: #666666">(</span><span style="color: #B00040">int</span> i <span style="color: #666666">=</span> <span style="color: #666666">0;</span> i <span style="color: #666666">&lt;</span> word<span style="color: #666666">.</span><span style="color: #7D9029">length</span><span style="color: #666666">;</span> i<span style="color: #666666">++)</span> <span style="color: #666666">{</span>
+			<span style="color: #008000; font-weight: bold">if</span> <span style="color: #666666">(</span>word<span style="color: #666666">[</span>i<span style="color: #666666">]</span> <span style="color: #666666">==</span> latter<span style="color: #666666">)</span>
+				asteWord<span style="color: #666666">[</span>i<span style="color: #666666">]</span> <span style="color: #666666">=</span> latter<span style="color: #666666">;</span>
+
+		<span style="color: #666666">}</span>
+
+		<span style="color: #008000; font-weight: bold">return</span> String<span style="color: #666666">.</span><span style="color: #7D9029">valueOf</span><span style="color: #666666">(</span>asteWord<span style="color: #666666">);</span>
+
+	<span style="color: #666666">}</span>
+
+	<span style="color: #008000; font-weight: bold">private</span> <span style="color: #008000; font-weight: bold">static</span> <span style="color: #B00040">boolean</span> <span style="color: #0000FF">validateChar</span><span style="color: #666666">(</span>String guess<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+		<span style="color: #B00040">char</span><span style="color: #666666">[]</span> charArr <span style="color: #666666">=</span> guess<span style="color: #666666">.</span><span style="color: #7D9029">toCharArray</span><span style="color: #666666">();</span>
+
+		<span style="color: #008000; font-weight: bold">if</span> <span style="color: #666666">(</span>charArr<span style="color: #666666">.</span><span style="color: #7D9029">length</span> <span style="color: #666666">&gt;</span> <span style="color: #666666">1)</span>
+			<span style="color: #008000; font-weight: bold">return</span> <span style="color: #008000; font-weight: bold">false</span><span style="color: #666666">;</span>
+
+		<span style="color: #008000; font-weight: bold">if</span> <span style="color: #666666">(</span><span style="color: #BA2121">&#39;a&#39;</span> <span style="color: #666666">&lt;=</span> charArr<span style="color: #666666">[0]</span> <span style="color: #666666">&amp;&amp;</span> charArr<span style="color: #666666">[0]</span> <span style="color: #666666">&lt;=</span> <span style="color: #BA2121">&#39;z&#39;</span><span style="color: #666666">)</span>
+			<span style="color: #008000; font-weight: bold">return</span> <span style="color: #008000; font-weight: bold">true</span><span style="color: #666666">;</span>
+
+		<span style="color: #008000; font-weight: bold">if</span> <span style="color: #666666">(</span><span style="color: #BA2121">&#39;A&#39;</span> <span style="color: #666666">&lt;=</span> charArr<span style="color: #666666">[0]</span> <span style="color: #666666">&amp;&amp;</span> charArr<span style="color: #666666">[0]</span> <span style="color: #666666">&lt;=</span> <span style="color: #BA2121">&#39;Z&#39;</span><span style="color: #666666">)</span>
+			<span style="color: #008000; font-weight: bold">return</span> <span style="color: #008000; font-weight: bold">true</span><span style="color: #666666">;</span>
+
+		<span style="color: #008000; font-weight: bold">return</span> <span style="color: #008000; font-weight: bold">false</span><span style="color: #666666">;</span>
+	<span style="color: #666666">}</span>
+
+<span style="color: #666666">}</span>
+</pre></div>

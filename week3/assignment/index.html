@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="./lib/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="./lib/mdb.min.css" rel="stylesheet"> -->
+    <link href="./css/styles.css" rel="stylesheet">
+    <script src="./js/data.js"></script>
+    <script src="./js/controller.js"></script>
+    <link rel="stylesheet" type="text/css" href="lib/font/quicksand-regular_[allfont.net].ttf" />
+    <title>Are you a ghost?</title>
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row strip-header">
+            <div class="col-2 col-md-1 side-menu">
+                <div class="humbugger-btn" onclick="onOpenSideBar()"><img src="img/hamburger-btn.svg" width="40"></div>
+            </div>
+            <div class="col-10 col-md-9">
+                <div class="logo">
+                    <span class="first-char">Q</span>uiz yourself
+                </div>
+            </div>
+        </div>
+        <div class="row strip-question">
+            <div class="col-12 col-md-3">
+                <ul class="list-group" id="setting-block">
+                    <li class="list-group-item setting-item" id="choose-quiz" onclick="onClickSettingOption(this);">
+                        Choose Quiz</li>
+                    <!-- <li class="list-group-item setting-item" id="upload-new-quiz" onclick="onClickSettingOption(this);">
+                        Upload New Quiz</li>
+                    <li class="list-group-item setting-item" id="setting" onclick="onClickSettingOption(this);">Setting
+                    </li> -->
+                </ul>
+            </div>
+            <div class="col-12 col-md-8">
+                <div class="row main-row">
+                    <div class="col-12 m-0 mt-md-4 mb-md-4 bar">
+                        <div class="col-12" id="question-title">Welcome to our quiz!</div>
+                        <div class="row question-block">
+                            <div class="col-12 col-md-5" id="question-image">
+                            </div>
+                            <div class="col-12 justify-content-center mt-5 col-md-6" id="answer-block">
+                                This is generic system! </br> Please choose quiz.
+                            </div>
+                        </div>
+                        <div class="col-12 d-flex justify-content-end">
+                            <div id="btn-back" onclick="onBackQue();"></div>
+                            <div id="btn-next" onclick="onNextQue();"></div>
+                        </div>
+                        <div class="col-12" id="questions-process">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="./js/data.js"></script>
+    <script src="./js/controller.js"></script>
+
+
+</body>
+
+</html>

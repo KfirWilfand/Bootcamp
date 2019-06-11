@@ -1,0 +1,57 @@
+.stripe.full-image {
+  height: 560px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+.stripe.full-image.iPhone-xr-hero {
+  background-size: 700px;
+}
+.stripe.full-image.iPhone-xs-hero {
+  background-size: 900px;
+}
+@media screen and (min-width: 900px) {
+  .stripe.full-image.iPhone-xr-hero {
+    background-image: url("../img/heroes/iphone_xr/large.jpg");
+  }
+  .stripe.full-image.iPhone-xs-hero {
+    background-image: url("../img/heroes/iphone_xs/large.jpg");
+  }
+  .stripe.full-image.tv-4k {
+    background-image: url("../img/heroes/apple_tv/large.jpg");
+    background-size: 2000px 660px;
+    background-position: center;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .stripe.full-image.iPhone-xr-hero {
+    background-image: url("../img/heroes/iphone_xr/medium.jpg");
+  }
+  .stripe.full-image.iPhone-xs-hero {
+    background-image: url("../img/heroes/iphone_xs/medium.jpg");
+  }
+  .stripe.full-image.tv-4k {
+    background-image: url("../img/heroes/apple_tv/medium.jpg");
+    background-size: 900px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .stripe.full-image {
+    height: 460px;
+  }
+
+  .stripe.full-image.iPhone-xr-hero {
+    background-image: url("../img/heroes/iphone_xr/small.jpg");
+    background-size: 240px;
+  }
+  .stripe.full-image.iPhone-xs-hero {
+    background-image: url("../img/heroes/iphone_xs/small.jpg");
+    background-size: 170px;
+  }
+  .stripe.full-image.tv-4k {
+    background-image: url("../img/heroes/apple_tv/small.jpg");
+    background-size: 750px 560px;
+  }
+}

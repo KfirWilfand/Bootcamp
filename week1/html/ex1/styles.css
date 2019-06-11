@@ -1,0 +1,41 @@
+body {
+  margin: 0px;
+  font-family: "SF Pro Text", "Myriad Set Pro", "SF Pro Icons", "Helvetica Neue",
+    "Helvetica", "Arial", sans-serif;
+}
+
+.header {
+  background-color: rgba(45, 45, 45, 0.98);
+  text-align: center;
+  align-content: center;
+  font-size: 17px;
+  height: 48px;
+}
+
+.header ul {
+  position: absolute;
+  margin-top: 14px;
+  width: -webkit-fill-available;
+}
+
+.header il {
+  padding: 0 22px;
+}
+
+.header a:link,
+a:active,
+a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+.header a:hover {
+  color: gray;
+  text-decoration: none;
+}
+
+.regular_block {
+  height: 44px;
+  padding-top: 44px;
+  text-align: center;
+}

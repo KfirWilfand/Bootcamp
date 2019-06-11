@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Lotem">
+    <script src="./lib/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <input type=text value="" />
+        <input type=text value="" />
+        <input type=text value="" />
+        <input type=text value="" />
+
+        <div class="results"></div>
+    </div>
+
+    <script>
+        var buildStr = "";
+        $("#container input").each(function (index) {
+            $(this).on("change", function () {
+                
+                $("#container input").each(function (inputIndex) {
+                    buildStr += $(this).val() + " ";
+                });
+                $(".results").text(buildStr);
+            });
+        });
+    </script>
+
+</body>
+
+</html>

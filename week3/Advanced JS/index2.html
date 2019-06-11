@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function onSubmitFrom() {
+            var inputArr = document.getElementsByTagName("input");
+            var msg = "";
+
+            // inputArr.forEach(input => {
+            //     msg += input.value;
+            //     msg += "\n";
+            // });
+
+            for (let input of inputArr) {
+                msg += input.value;
+                msg += "\n";
+            }
+            
+            var retVal = confirm(msg);
+
+            if (retVal == true) {
+                document.write("congratulations you successfully sent this form");
+            } else {
+                return;
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        <input type="text" placeholder="name">
+        <input type="text" placeholder="age">
+        <input type="email" placeholder="email">
+        <button id="btn-submit" onclick="onSubmitFrom()">Submit</button>
+    </form>
+
+</body>
+
+</html>

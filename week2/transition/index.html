@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: brown;
+            
+            /* position: absolute; */
+        }
+
+        .ex-1 {
+            display: table-cell;
+            vertical-align: bottom;
+        }
+
+        .ex-2 {
+            background-color: transparent;
+        }
+
+        .ex-1:hover{
+            border: 2px solid blueviolet;
+        }
+
+        .ex-1:hover  .ex-2{
+            height: 0px;
+            padding-top: 100px;
+            background-color: blue;
+            transition: padding-top 4s ease 0.5s;
+        }
+
+        .ex-1:hover {
+            /* border: 3px solid yellow;
+            background-color: aquamarine;
+            width: 600px;
+            transition: width 4s ease 0.5s; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box ex-1">
+        <div class="box ex-2">
+
+        </div>
+    </div>
+
+</body>
+
+</html>

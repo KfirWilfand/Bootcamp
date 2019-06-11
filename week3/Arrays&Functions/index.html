@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+        var calcMin = (num1, num2) => {
+            return num1 > num2 ? num2 : num1;
+        }
+
+        function test_equal(actual, expected, msg) {
+            if (actual !== expected) {
+                console.log(`Error testing ${msg || ''}. expected: ${expected}, got ${actual}`)
+            }
+        }
+
+        test_equal(calcMin, -100, 3), 3);
+        test_equal(calcMin, 45, 43), 45);
+        const substringFunct = (num1, num2) => {
+            return num1 > num2 ? num2 : num1;
+        }
+
+        test_equal(testSubstring(substringFunct, "ES6 is great", "eat"), true);
+        test_equal(testSubstring(substringFunct, "ES6 is great", "ES7"), false);
+        test_equal(testSubstring(substringFunct, "momomomomom", "omom"), true);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

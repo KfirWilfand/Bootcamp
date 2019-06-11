@@ -1,0 +1,93 @@
+{
+    "title": "Test your social capability",
+    "questions": [
+      {
+        "question": "Your friends would describe you as",
+        "img-url": "../img/quiz-2/q0.jpg",
+        "answers": [
+          "a very open person.",
+          "a very private person."
+        ]
+      },
+      {
+        "question": "Given the choice, you’d rather",
+        "img-url": "../img/quiz-2/q1.jpg",
+        "answers": [
+          "see the world for what it is.",
+          "see the world for what it could be."
+        ]
+      },
+      {
+        "question": "Class projects are far better",
+        "answers": [
+          "when you can be part of a group.",
+          "when you can work by yourself."
+        ],
+        "img-url": "../img/quiz-2/q2.jpg"
+      },
+      {
+        "question": "Pre-arranged schedules:",
+        "answers": [
+          "They provide necessary structure.",
+          "They cramp my style."
+        ],
+        "img-url": "../img/quiz-2/q3.jpg"
+      },
+      {
+        "question": "People who organize their closets",
+        "answers": [
+          "save a lot of time and hassle every morning.",
+          "should spend their time on something more fun."
+        ],
+        "img-url": "../img/quiz-2/q4.jpg"
+      },
+      {
+        "question": "Your ideal partner is",
+        "answers": [
+          "smart, reliable, and logical.",
+          "passionate, sensitive, and romantic."
+        ],
+        "img-url": "../img/quiz-2/q5.jpg"
+      },
+      {
+        "question": "Choose the word that describes you better:",
+        "answers": [
+          "analytical",
+          "free-spirited"
+        ],
+        "img-url": "../img/quiz-2/q6.jpg"
+      },
+      {
+        "question": "Choose the word that describes you better:",
+        "answers": [
+          "methodical",
+          "spontaneous"
+        ],
+        "img-url": "../img/quiz-2/q7.jpg"
+      },
+      {
+        "question": "Choose the word that describes you better:",
+        "answers": [
+          "orderly",
+          "messy"
+        ],
+        "img-url": "../img/quiz-2/q8.jpg"
+      },
+      {
+        "question": "Choose the word that describes you better:",
+        "answers": [
+          "sensible",
+          "fascinating"
+        ],
+        "img-url": "../img/quiz-2/q9.jpg"
+      },
+      {
+        "question": "Choose the word that describes you better:",
+        "answers": [
+          "logical",
+          "emotional"
+        ],
+        "img-url": "../img/quiz-2/q10.jpg"
+      }
+    ]
+  }

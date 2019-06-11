@@ -1,0 +1,13 @@
+body {
+    margin: 0px;
+    background-color: black;
+}
+
+.img_logo {
+    height: 100px
+}
+
+.box_logo {
+    padding: 0px;
+    height: 100px
+}

@@ -1,0 +1,71 @@
+@font-face {
+  font-family: SF Pro Display;
+  src: url(https://www.apple.com/wss/fonts/SF-Pro-Display/v2/sf-pro-display_regular.woff2);
+}
+
+body {
+  margin: 0px;
+  font-family: "SF Pro Display", sans-serif;
+}
+h2 {
+  font-size: 26px;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.header {
+  background-color: rgba(45, 45, 45, 0.98);
+  text-align: center;
+  align-content: center;
+  font-size: 17px;
+  height: 48px;
+}
+
+@media screen and (max-width: 750px) {
+  .items-full-screen-display {
+    display: none;
+  }
+  /* .items-mobile-screen-display {
+    display: none;
+  } */
+}
+
+@media screen and (min-width: 750px) {
+  */
+  .items-mobile-screen-display {
+    display: none;
+  }
+}
+
+.header ul {
+  position: absolute;
+  margin-top: 14px;
+  width: -webkit-fill-available;
+}
+
+.header il {
+  padding: 0 22px;
+}
+
+.header a:link,
+a:active,
+a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+.header a:hover {
+  color: gray;
+  text-decoration: none;
+}
+
+.stripe {
+  position: relative;
+  text-align: center;
+  background-color: #fafafa;
+  min-width: 300px;
+  margin-top: 12px;
+}

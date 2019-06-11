@@ -1,0 +1,25 @@
+.glyphicon {
+  font-size: 60px;
+  color: royalblue;
+}
+
+.head-line {
+  font-size: xx-large;
+  color: royalblue;
+}
+
+.head-line .bold-text {
+  font-weight: bold;
+}
+
+form {
+  margin-top: 40px;
+}
+
+form .form-group {
+  margin-top: 30px;
+}
+
+.btn-primary{
+    margin-top: 30px; 
+}

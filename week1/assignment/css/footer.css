@@ -1,0 +1,76 @@
+.footer {
+  background-color: #fafafa;
+}
+.footer-content {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 900px;
+  background-color: #fafafa;
+  color: gray;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: normal;
+  max-width: 900px;
+}
+
+.column-section {
+  display: inline-block;
+  margin-left: 20px;
+  width: 15%;
+  font-size: 10px;
+  font-style: normal;
+  margin-bottom: 40px;
+}
+
+.list-title {
+  margin-bottom: 12px;
+  font-weight: bold;
+}
+
+.list-title.sub {
+  margin-top: 10px;
+}
+
+.copyright {
+  display: inline-block;
+}
+
+.copyright.links {
+  margin-left: 15px;
+}
+.copyright.flag-uk img {
+  margin-top: -12px;
+  position: absolute;
+  margin-left: 110px;
+  width: 100px;
+}
+
+.footer-item.copyrights {
+  margin-bottom: 10px;
+}
+
+.column-section a:link,
+.column-section a:active,
+.column-section a:visited {
+  color: gray;
+  font-size: 12px;
+  font-style: normal;
+  text-decoration: none;
+}
+
+.column-section {
+  /* margin: 0px;
+    padding: 0px;
+    height: 40px; */
+  top: 10px;
+}
+
+li {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+ul {
+  list-style: none;
+  padding-left: 0;
+}

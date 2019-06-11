@@ -1,0 +1,22 @@
+body {
+  margin: 0px;
+}
+
+.stripe {
+
+  text-align: center;
+  height: 40px;
+  background-color: brown; 
+}
+
+nav {
+  text-align: right;
+  vertical-align: middle;
+}
+nav a {
+  
+  color: white;
+  padding-right: 14px;
+  border: 2px solid gray;
+  background-color: aqua;
+}

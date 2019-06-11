@@ -1,0 +1,15 @@
+div {
+  width: 100px;
+  height: 100px;
+  border: 3px solid #444;
+  padding: 4px;
+  display: inline-table;
+}
+
+#box1 {
+  background: red;
+}
+
+#box2 {
+  background: green;
+}
