@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Plant {
+            constructor(season, color, isBlossom) {
+                this.season = season;
+                this.color = color;
+                this.isBlossom = isBlossom;
+            }
+
+            isAvailable(size) {
+                return this.sizes.includes(size);
+            }
+        }
+
+
+
+        let greenhouse = [
+            new Plant("winter", "blue", false),
+            new Plant("winter", "red", false),
+            new Plant("summer", "pink", true),
+            new Plant("summer", "green", true),
+            new Plant("spring", "green", false),
+            new Plant("spring", "green", true)
+        ];
+
+        function getBlossomPlants(plants, season) {
+            let blossomPlants = [];
+
+            for (plant of plants) {
+                if (plant.isBlossom && plant.season === season) blossomPlants.push(plant);
+            }
+
+            return blossomPlants;
+        }
+
+        console.log(getBlossomPlants(greenhouse, "summer"));
+        console.log(getBlossomPlants(greenhouse, "spring"));
+
+
+    </script>
+</body>
+
+</html>

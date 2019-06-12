@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Shoes {
+            constructor(name, sizes) {
+                this.name = name;
+                this.sizes = sizes;
+            }
+
+            isAvailable(size) {
+                return this.sizes.includes(size);
+            }
+        }
+
+        let s1 = new Shoes("spring",[38,39,41,43,44,45]);
+        console.log(s1.isAvailable(44));
+        console.log(s1.isAvailable(24));
+    </script>
+</body>
+
+</html>

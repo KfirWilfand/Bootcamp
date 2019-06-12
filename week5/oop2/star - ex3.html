@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Account {
+            constructor(sum) {
+                this.sum = sum;
+            }
+
+            deposit(value) {
+                this.sum += value;
+            }
+
+            withdraw(value) {
+                if (this.canWithdraw(value)) return;
+                this.sum -= value;
+            }
+
+            canWithdraw(value) {
+                return (this.sum < value);
+            }
+
+            toString(){
+                console.log(`The current status is: ${this.sum}$`);
+            }
+        }
+
+        function lottery(account) {
+            if (account.canWithdraw(100)) {
+                console.log("Can't withdraw 100$");
+                return;
+            }
+
+            const randWithdraw = Math.floor((Math.random() * 100));
+            account.withdraw(randWithdraw);
+
+            const randWon = Math.floor((Math.random()*2));
+            console.log(randWon ? "Won" : "Lose");
+
+            randWon ? account.deposit(30) : account.withdraw(account.sum);
+        }
+
+
+        let a1 = new Account(71100);
+        for (let i = 0; i < 5; i++) {
+            console.log(`#round ${i}:`);
+            lottery(a1);
+            a1.toString();
+        }
+
+        console.log(`The final resualt is: ${a1.sum}`);
+    </script>
+</body>
+
+</html>
