@@ -58,13 +58,7 @@
         }
         //11
         function calcShapeArea2(shape) {
-            let calc;
-            if (shape.type === "circle")
-                calc = shape.calcArea(shape.radius)
-            else
-                calc = shape.calcArea(shape.edgeLength)
-
-            return calc;
+            return calcShapeArea(shape);
         }
 
         function test_equal(actual, expected, msg) {
