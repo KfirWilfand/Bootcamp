@@ -5,20 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-
+    <title>Memory Game</title>
     <link href="./css/styles.css" rel="stylesheet">
     <script src="./lib/js/popper.min.js"></script>
     <script src="./lib/js/jquery-3.4.1.min.js"></script>
     <script src="./lib/js/bootstrap.min.js"></script>
     <link href="./lib/css/bootstrap.min.css" rel="stylesheet">
-    <script>let currentTheme;
-    </script>
     <script src="./js/theme.js"></script>
     <script src="./js/card.js"></script>
-    
     <script src="./js/navbar.js"></script>
-
 </head>
 
 <body>
@@ -43,8 +38,8 @@
                 </div>
                 <div class="btn-group" role="group" aria-label="Basic example">
                     <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">Easy</button>
-                    <div class="dropdown-menu">
+                        aria-haspopup="true" aria-expanded="false" id="dd-GameLevel-btn">Easy</button>
+                    <div class="dropdown-menu" id="dd-GameLevel-menu">
                         <div>Game Level:</div>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" id="easy">Easy</a>

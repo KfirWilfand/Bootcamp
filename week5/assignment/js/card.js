@@ -9,9 +9,24 @@ class CardSet {
     return this.dirPath + fileName;
   }
 
-  getMixCard() {
-    let dupCardSet = this.cards.concat(this.cards);
-    const length = dupCardSet.length;
+  getMixCard(gameLevel) {
+    let cardsCat = this.cards.slice();
+    let dupCardSet;
+    let length;
+
+    switch (gameLevel) {
+      case "easy":
+        cardsCat.splice(0, 6);
+        break;
+      case "medium":
+        cardsCat.splice(0, 3);
+        break;
+      case "hard":
+        break;
+    }
+
+    dupCardSet = cardsCat.concat(cardsCat);
+    length = dupCardSet.length;
 
     for (let i = 0; i < length; i++) {
       //rand between 0-19 dupCardSet.length
@@ -44,8 +59,7 @@ const cards = {
     new Card(6, "ca6.jpg"),
     new Card(7, "ca7.jpg"),
     new Card(8, "ca8.jpg"),
-    new Card(9, "ca9.jpg"),
-    new Card(10, "ca10.jpg")
+    new Card(9, "ca9.jpg")
   ]),
   food: new CardSet("Food", "./img/card/food/", [
     new Card(1, "ca1.jpg"),
@@ -56,8 +70,7 @@ const cards = {
     new Card(6, "ca6.jpg"),
     new Card(7, "ca7.jpg"),
     new Card(8, "ca8.jpg"),
-    new Card(9, "ca9.jpg"),
-    new Card(10, "ca10.jpg")
+    new Card(9, "ca9.jpg")
   ]),
   cars: new CardSet("Cars", "./img/card/car/", [
     new Card(1, "ca1.jpg"),
@@ -68,14 +81,15 @@ const cards = {
     new Card(6, "ca6.jpg"),
     new Card(7, "ca7.jpg"),
     new Card(8, "ca8.jpg"),
-    new Card(9, "ca9.jpg"),
-    new Card(10, "ca10.jpg")
+    new Card(9, "ca9.jpg")
   ])
 };
 
 let firstCard;
 let isFirstCard = true;
 let isBoardClickable = true;
+let cardSet = cards["animals"];
+let gameLevel = "easy";
 
 function onClickCard(e) {
   if (!isBoardClickable) return;
@@ -105,23 +119,17 @@ function onClickCard(e) {
 }
 
 $(document).ready(function() {
-  let cardSet = cards["animals"];
-
-  $("#dd-CardSheet-menu a").click(function(e) {
-    cardSet = cards[`${$(this).attr("id")}`];
-    $("#dd-CardSheet-btn").text($(this).text());
-    buildBoard(cardSet);
-  });
-
-  buildBoard(cardSet);
+  buildBoard(cardSet, gameLevel);
 });
 
-function buildBoard(cardSet) {
-  let boardCard = cardSet.getMixCard();
+function buildBoard(cardSet, gameLevel) {
+  let boardCard = cardSet.getMixCard(gameLevel);
   $("#board").empty();
 
   boardCard.forEach(card => {
-    let cardElement = $(`<div class="col-1 card-item" id="${card.id}"></div>`)
+    let cardElement = $(
+      `<div class="col-5 col-md-1 card-item" id="${card.id}"></div>`
+    )
       .attr("image-data", `${cardSet.dirPath}${card.fileName}`)
       .css("background-image", `url(${currentTheme.backCard})`)
       .click(onClickCard);

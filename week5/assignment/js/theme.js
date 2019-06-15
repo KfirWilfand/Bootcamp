@@ -1,3 +1,4 @@
+let currentTheme;
 class Theme {
   constructor(name, navbar, navbarBrand, boardColor, backCard) {
     this.name = name;
@@ -42,9 +43,4 @@ const theme = {
 
 $(document).ready(function() {
   theme["itc"].setTheme();
-
-  $("#dd-Theme-menu a").click(function(e) {
-    theme[`${$(this).attr("id")}`].setTheme();
-    $("#dd-Theme-btn").text($(this).text());
-  });
 });
