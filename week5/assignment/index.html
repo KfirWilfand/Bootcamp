@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link href="./css/styles.css" rel="stylesheet">
+    <script src="./lib/js/popper.min.js"></script>
+    <script src="./lib/js/jquery-3.4.1.min.js"></script>
+    <script src="./lib/js/bootstrap.min.js"></script>
+    <link href="./lib/css/bootstrap.min.css" rel="stylesheet">
+    <script>let currentTheme;
+    </script>
+    <script src="./js/theme.js"></script>
+    <script src="./js/card.js"></script>
+    
+    <script src="./js/navbar.js"></script>
+
+</head>
+
+<body>
+    <li class="navbar navbar-expand-md navbar-light ">
+        <a class="navbar-brand" href="#">
+            <img src="img/logo.svg" width="30" height="30" alt="" class="d-inline-block align-top">
+            Memory Game
+        </a>
+
+        <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+            <li class="nav-item">
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"
+                        id="dd-Theme-btn">ITC</button>
+                    <div class="dropdown-menu" id="dd-Theme-menu">
+                        <div class="align-middle">Theme:</div>
+                        <div class="dropdown-divider" id="dd-Theme"></div>
+                        <a class="dropdown-item" id="itc">ITC</a>
+                        <a class="dropdown-item" id="blue">Blue</a>
+                        <a class="dropdown-item" id="dark">Dark</a>
+                    </div>
+                </div>
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">Easy</button>
+                    <div class="dropdown-menu">
+                        <div>Game Level:</div>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" id="easy">Easy</a>
+                        <a class="dropdown-item" id="medium">Medium</a>
+                        <a class="dropdown-item" id="hard">Hard</a>
+                    </div>
+                </div>
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false" id="dd-CardSheet-btn">Animals</button>
+                    <div class="dropdown-menu" id="dd-CardSheet-menu">
+                        <div class="align-middle">Card sheet:</div>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" id="animals">Animals</a>
+                        <a class="dropdown-item" id="food">Food</a>
+                        <a class="dropdown-item" id="cars">Cars</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </li>
+
+    <div class="container-fluid">
+        <div class="row justify-content-center h-100" id="board">
+        </div>
+    </div>
+
+</body>
+
+</html>

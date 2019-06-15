@@ -1,0 +1,21 @@
+.header{
+    background-color: #f1f1f1
+  
+}
+
+#board{
+    /* background-color: cornflowerblue; */
+    /* height: 100px; */
+}
+
+.card-item{
+    min-width: 15%;
+    min-height: 30vh; 
+    border: 1px solid gray;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px gray;
+    margin: 5px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
