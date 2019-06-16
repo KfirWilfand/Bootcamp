@@ -90,6 +90,7 @@ let isFirstCard = true;
 let isBoardClickable = true;
 let cardSet = cards["animals"];
 let gameLevel = "easy";
+let mistakeCounter = 0;
 
 function onClickCard(e) {
   if (!isBoardClickable) return;
@@ -108,12 +109,14 @@ function onClickCard(e) {
   if ($(this).attr("id") === $(firstCard).attr("id")) {
     $(this).attr("solve", "true");
     $(firstCard).attr("solve", "true");
+    if (checkWon()) displayResult(mistakeCounter);
   } else {
     isBoardClickable = false;
     setTimeout(() => {
       $(this).css("background-image", `url(${currentTheme.backCard})`);
       $(firstCard).css("background-image", `url(${currentTheme.backCard})`);
       isBoardClickable = true;
+      mistakeCounter++;
     }, 1000);
   }
 }
@@ -135,5 +138,24 @@ function buildBoard(cardSet, gameLevel) {
       .click(onClickCard);
 
     $("#board").append(cardElement);
+  });
+}
+
+function checkWon() {
+  let isWon = true;
+  $(".card-item").each(function(carIndex, card) {
+    if ($(card).attr("solve") != "true") {
+      isWon = false;
+    }
+  });
+
+  return isWon;
+}
+
+function displayResult(res) {
+  $(".modal-body").text(`You make a ${res} mistakes! nice work!`);
+  $("#exampleModal").modal("show");
+  $("#modal-play-again-btn").click(function() {
+    buildBoard(cardSet, gameLevel);
   });
 }
