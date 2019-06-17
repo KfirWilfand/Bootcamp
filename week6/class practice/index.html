@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Student {
+            constructor(name, courses) {
+                this.name = name;
+                this.courses = courses;
+            }
+        }
+        class Programmer extends Student {
+            constructor(name, courses, os, languages, vcs) {
+                super(name, courses);
+                this.isFriendly = isFriendly;
+            }
+
+            isProgramingIn(language) {
+                return this.languages.include(language);
+            }
+        }
+
+        function getJavaScriptProgramers(Programers) {
+            let JSProgramers = [];
+            Programers.forEach(programer => {
+                programer.languages.include("javascript");
+            });
+        }
+
+        getJavaScriptProgramers([new Programmer("David", ["OOP", "English"], new Student("WIN10", ["javascript", "cpp", "php"], "git")),
+        new Programmer("David", ["OOP", "English"], new Student("WIN10", ["javascript", "cpp", "php"], "git")),
+        new Programmer("David", ["OOP", "English"], new Student("WIN10", ["javascript", "cpp", "php"], "git"))]);
+
+    </script>
+
+</body>
+
+</html>
