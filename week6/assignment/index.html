@@ -7,7 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Minecraft</title>
     <link href="./css/styles.css" rel="stylesheet">
+    <link href="./css/sideBar.css" rel="stylesheet" />
     <script src="./lib/js/popper.min.js"></script>
+
     <script src="./lib/js/jquery-3.4.1.min.js"></script>
     <script src="./lib/js/bootstrap.min.js"></script>
     <link href="./lib/css/bootstrap.min.css" rel="stylesheet">
@@ -49,6 +51,28 @@
 <body>
 
 
-</body>
+  <body>
+    <div id="wrapper" class="toggled">
+      <!-- Sidebar -->
+      <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+          <li>
+            <div class="box_tools pickaxe" id="pickaxe"></div>
+          </li>
+          <li>
+            <div class="box_tools shovel" id="shovel"></div>
+          </li>
+          <li>
+            <div class="box_tools axe" id="axe"></div>
+          </li>
+          <li>
+            <div class="box_tools box_tile" id="box_tile"></div>
+          </li>
+        </ul>
+      </div>
+      <!-- /#sidebar-wrapper -->
+    </div>
 
+    <script src="/lib/js/index.js"></script>
+  </body>
 </html>
