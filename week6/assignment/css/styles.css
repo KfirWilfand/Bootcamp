@@ -1,0 +1,47 @@
+.box_tools {
+  width: 102px;
+  height: 102px;
+  border: 1px solid white;
+  border-radius: 20px;
+  margin: 0 auto;
+  top: 50px;
+  position: relative;
+  margin-bottom: 20px;
+  object-fit: cover;
+}
+
+.box_tile {
+  width: 50px;
+  height: 50px;
+  border-radius: 0px;
+}
+.axe {
+  background-image: url("../images/axe.png");
+}
+
+.shovel {
+  background-image: url("../images/shovel.png");
+}
+
+.pickaxe {
+  background-image: url("../images/Pickaxe.png");
+}
+
+/*
+.border-button-red { /* if selected  tool doesnt match to game */
+/* outline: solid 0px rgb(223, 0, 0); */
+/* transition: outline 0.6s linear; */
+/* border-radius: 20px; */
+
+/*  margin: 0.5em;  Increased margin since the outline expands outside the element 
+  }
+  
+  .border-button-red:hover { outline-width: 5px; } */
+
+.box_border_blue {
+  box-shadow: 0 0 16px 15px blue;
+}
+
+.box_border_red {
+  box-shadow: 0 0 16px 15px red;
+}
