@@ -1,0 +1,6 @@
+.b-tile-item{
+    background-image: url("../img/cell/grass-earth.png");
+    background-size: 120px;
+    border: 2px solid black;
+    min-height: 100px;
+}

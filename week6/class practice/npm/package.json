@@ -1,0 +1,15 @@
+{
+  "name": "npm",
+  "version": "1.0.0",
+  "description": "class practice",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4"
+  }
+}
