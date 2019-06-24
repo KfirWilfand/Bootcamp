@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function nouveau(Constructor,title, author, haveRead) {
+            let instance = Object.create(Constructor.prototype)
+            Constructor.apply(instance, [title, author, haveRead]);
+            return instance;
+        }
+
+        function Book(title, author, haveRead) {
+            this.title = title;
+            this.author = author;
+            this.haveRead = haveRead;
+        }
+
+        Book.prototype.getAuthor = function () {
+            return this.author;
+        }
+
+        function test_equal(actual, expected, msg) {
+            if (typeof expected === "object") {
+                for (prop in expected) {
+                    test_equal(actual[prop], expected[prop]);
+                }
+            } else {
+                if (actual !== expected) {
+                    console.log(`Error testing ${msg || ''}. expected: ${expected}, got ${actual}`)
+                }
+            }
+        }
+
+        var hobbit = nouveau(Book, "The Hobbit", "J.R.R Tolkien", true);
+        var hobitWithNew = new Book("The Hobbit", "J.R.R Tolkien", true);
+        test_equal(hobbit.title, "The Hobbit");
+        test_equal(hobbit, hobitWithNew);
+        test_equal(hobbit.getAuthor(), "J.R.R Tolkien");
+        test_equal(hobbit instanceof Book, true);
+    </script>
+</body>
+
+</html>
