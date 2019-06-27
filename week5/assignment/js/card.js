@@ -86,7 +86,8 @@ const cards = {
 };
 
 let firstCard;
-let isFirstCard = true;
+let firstCardId;
+isFirstCard = true;
 let isBoardClickable = true;
 let cardSet = cards["animals"];
 let gameLevel = "easy";
@@ -95,6 +96,7 @@ let mistakeCounter = 0;
 function onClickCard(e) {
   if (!isBoardClickable) return;
   if ($(this).attr("solve") == "true") return;
+  if (typeof(firstCard) != 'undefined' && $(firstCard).attr("id") === $(this).attr("id")) return;
 
   $(this).css("background-image", `url(${$(this).attr("image-data")})`);
 
