@@ -1,0 +1,49 @@
+#airConditioner {
+  background-position: center;
+  background-image: url("./img/air-con.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 400px;
+  width: 400px;
+}
+
+.screen {
+  display: inline-flex;
+  position: absolute;
+  top: 122px;
+  left: 25px;
+}
+
+.icon {
+  background-position: center;
+  background-image: url("./img/air-con.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 36px;
+  width: 36px;
+  margin: 6px;
+}
+
+.soff {
+  background-image: url("./img/power-off.png");
+}
+.son {
+  background-image: url("./img/power-on.png");
+}
+
+.mcool {
+  background-image: url("./img/cool.png");
+}
+
+.mdry {
+  background-image: url("./img/dry.png");
+}
+
+.mfan {
+  background-image: url("./img/fan.png");
+}
+
+.temp {
+    font-size: xx-large;
+    color: royalblue;
+}
