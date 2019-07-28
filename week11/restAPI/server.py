@@ -3,117 +3,96 @@ from pymysql import connect, cursors
 import json
 
 connection = connect(host='localhost', user='root', password='root',
-                     db='imdb', charset='utf8', cursorclass=cursors.DictCursor)
+                     db='bootcamp', charset='utf8', cursorclass=cursors.DictCursor)
 
 
 @get('/student')
-def getStudentById():
+def get_student_by_id():
     id = request.query.id
 
     if id:
-        query = "SELECT * FROM bootcamp.students WHERE `first_name`= {} ".format(id)
-        isStudentExist = executeQuery(query)
+        query = "SELECT * FROM students WHERE `first_name`= {} ".format(id)
+        is_student_exist = execute_query(query)
 
-        if not isStudentExist:
-            return printMsg("Error", 'Student doest exist!', {'query': query})
+        if not is_student_exist:
+            return print_msg("Error", 'Student doest exist!', {'query': query})
 
-        return executeQuery("SELECT * FROM bootcamp.students WHERE `student_id`= " + id)
+        return execute_query("SELECT * FROM students WHERE `student_id`= " + id)
     else:
-        return executeQuery("SELECT * FROM bootcamp.students")
+        return execute_query("SELECT * FROM students")
 
 
 @post('/student/add')
-def getStudentById():
+def get_student_by_id():
     forms = request.forms
 
-    firstName = forms["firstName"]
-    lastName = forms["lastName"]
+    first_name = forms["first_name"]
+    last_name = forms["last_name"]
     cohort = forms["cohort"]
 
-    if firstName and lastName and cohort:
+    if first_name and last_name and cohort:
 
-        return executeQuery(
+        return execute_query(
             "INSERT INTO bootcamp.students (`first_name`,`last_name`,`cohort`) VALUES ('{}','{}',{})".format(
-                firstName, lastName, cohort))
+                first_name, last_name, cohort))
 
     else:
-        return printMsg("Error", 'missing parameters')
+        return print_msg("Error", 'missing parameters')
 
 
 @post('/student/update')
-def getUpdateStudent():
+def get_update_student():
     forms = request.forms
 
     id = forms["id"]
-    firstName = forms["firstName"]
-    lastName = forms["firstName"]
+    first_name = forms["first_name"]
+    last_name = forms["last_name"]
     cohort = forms["cohort"]
 
-    if id and firstName and lastName and cohort:
-        if not isStudentExist(id):
-            return printMsg("Error", 'Student doesnt exist!')
+    if id and first_name and last_name and cohort:
+        if not is_student_exist(id):
+            return print_msg("Error", 'Student doesnt exist!')
 
-        return executeQuery(
+        return execute_query(
             "UPDATE bootcamp.students SET `first_name` = '{}', `last_name` = '{}', `cohort` = {} WHERE `student_id` = {};".format(
-                firstName, lastName, cohort, id))
+                first_name, last_name, cohort, id))
     else:
-        return printMsg("Error", 'missing parameters')
-
-
-@post('/student/update')
-def getUpdateStudent():
-    forms = request.forms
-
-    id = forms["id"]
-    firstName = forms["firstName"]
-    lastName = forms["firstName"]
-    cohort = forms["cohort"]
-
-    if id and firstName and lastName and cohort:
-        if not isStudentExist(id):
-            return printMsg("Error", 'Student doesnt exist!')
-
-        return executeQuery(
-            "UPDATE bootcamp.students SET `first_name` = '{}', `last_name` = '{}', `cohort` = {} WHERE `student_id` = {};".format(
-                firstName, lastName, cohort, id))
-    else:
-        return printMsg("Error", 'missing parameters')
-
+        return print_msg("Error", 'missing parameters')
 
 @post('/student/delete')
-def getUpdateStudent():
+def get_update_student():
     forms = request.forms
 
     id = forms["id"]
 
     if id:
-        if not isStudentExist(id):
-            return printMsg("Error", 'Student doesnt exist!')
+        if not is_student_exist(id):
+            return print_msg("Error", 'Student doesnt exist!')
 
-        return executeQuery(
+        return execute_query(
             "DELETE FROM bootcamp.students WHERE `student_id` = '{}'".format(id))
     else:
-        return printMsg("Error", 'missing parameters')
+        return print_msg("Error", 'missing parameters')
 
 
-def isStudentExist(studentId):
-    return executeQuery("SELECT * FROM bootcamp.students WHERE `student_id` = {}".format(studentId))
+def is_student_exist(student_id):
+    return execute_query("SELECT * FROM bootcamp.students WHERE `student_id` = {}".format(student_id))
 
 
-def executeQuery(sqlQuery):
+def execute_query(sql_query):
     try:
         with connection.cursor() as cursor:
-            cursor.execute(sqlQuery)
+            cursor.execute(sql_query)
             if cursor.rowcount == 0:
                 return 0
             else:
                 result = cursor.fetchall()
                 return json.dumps(result)
     except:
-        return printMsg("Error", 'somthing is worng with the DB', {'query': sqlQuery})
+        return print_msg("Error", 'somthing is worng with the DB', {'query': sql_query})
 
 
-def printMsg(type, msg, element={"element": "no element to display"}):
+def print_msg(type, msg, element={"element": "no element to display"}):
     return json.dumps([{type: msg}, element])
 
 
