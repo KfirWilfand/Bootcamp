@@ -1,4 +1,4 @@
-from bottle import route, run, get, request, post
+from bottle import route, run, get, request, post,put
 from pymysql import connect, cursors
 import json
 
@@ -22,7 +22,7 @@ def get_student_by_id():
         return execute_query("SELECT * FROM students")
 
 
-@post('/student/add')
+@post('/student')
 def get_student_by_id():
     forms = request.forms
 
@@ -40,11 +40,10 @@ def get_student_by_id():
         return generate_json_msg("Error", 'missing parameters')
 
 
-@post('/student/update')
-def get_update_student():
+@put('/student/<id>')
+def get_update_student(id):
     forms = request.forms
 
-    id = forms["id"]
     first_name = forms["first_name"]
     last_name = forms["last_name"]
     cohort = forms["cohort"]

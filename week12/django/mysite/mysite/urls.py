@@ -20,4 +20,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^polls/', include('polls.urls')),
     url(r'^colors/', include('colors.urls')),
+    url(r'^SocialBoard/', include('SocialBoard.urls')),
 ]
